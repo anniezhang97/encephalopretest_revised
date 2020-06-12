@@ -1,5 +1,5 @@
 # Encephalo Investments - Quantitative Developer Pre-Test
-## Ruoyun Zhang
+## William Risher
 
 # Part 1: git
 - fork this repository
