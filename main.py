@@ -47,7 +47,7 @@ def mc_sim(sims, days, df):
     return expected_price-interval, expected_price+interval
 
 def main():
-    filename = '/Users/ruoyunzhang/Downloads/encephalopretest_revised-master/20192020histdata.csv'
+    filename = '20192020histdata.csv'
     rawdata = pd.read_csv(filename)
     cleansed = cleanse_data(rawdata)
     simnum = 1000  # change this number to one that you deem appropriate
