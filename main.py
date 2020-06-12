@@ -44,7 +44,7 @@ def mc_sim(sims, days, df):
     expected_price=np.mean(simulation_df.iloc[-1,:])
     interval=1.96*np.std(simulation_df.iloc[-1,:])/np.sqrt(sims)
 #     print(expected_price-interval, expected_price+interval)
-    return expected_price-interval, expected_price+interval
+    return expected_price,interval
 
 def main():
     filename = '20192020histdata.csv'
@@ -52,8 +52,8 @@ def main():
     cleansed = cleanse_data(rawdata)
     simnum = 1000  # change this number to one that you deem appropriate
     days = 25
-    left_bound,right_bound=mc_sim(simnum, days, cleansed)
-    print('The expected price on last day -/+ 95% confidence interval is:',left_bound,right_bound)
+    expected_price,interval=mc_sim(simnum, days, cleansed)
+    print('The expected price on last day +/- 95% confidence interval is:',expected_price,'+/-',interval)
     return 0
 
 
